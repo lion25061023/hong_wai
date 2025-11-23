@@ -720,6 +720,16 @@
               <FileType>5</FileType>
               <FilePath>.\Hardware\PWM.h</FilePath>
             </File>
+            <File>
+              <FileName>sensor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\hardware\sensor.c</FilePath>
+            </File>
+            <File>
+              <FileName>sensor.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\hardware\sensor.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

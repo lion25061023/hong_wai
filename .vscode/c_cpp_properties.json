@@ -7,7 +7,8 @@
                 "c:\\Users\\lion\\Desktop\\红外循迹小车\\Library",
                 "c:\\Users\\lion\\Desktop\\红外循迹小车\\User",
                 "c:\\Users\\lion\\Desktop\\红外循迹小车\\System",
-                "c:\\Users\\lion\\Desktop\\红外循迹小车\\Hardware"
+                "c:\\Users\\lion\\Desktop\\红外循迹小车\\Hardware",
+                "c:\\Users\\lion\\Desktop\\红外循迹小车\\hardware"
             ],
             "defines": [
                 "USE_STDPERIPH_DRIVER",
