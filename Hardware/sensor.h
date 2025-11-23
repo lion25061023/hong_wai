@@ -1,12 +1,11 @@
 #ifndef __sensor_H
 #define __sensor_H
 
+#define r1 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_11)
+#define r2 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_10)
+#define l1 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_9)
+#define l2 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8)
 
-
-#define x4 GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_6)
-#define x3 GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_5)
-#define x2 GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_4)
-#define x1 GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_3)
 
 
 void sensor_Init(void);
