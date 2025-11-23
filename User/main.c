@@ -23,9 +23,9 @@ int main(void)
 	
 	while (1)
 	{
-		OLED_ShowNum(1,1,GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_6),1);
-		OLED_ShowNum(2,1,x3,1);
-		OLED_ShowNum(3,1,GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_5),1);
+		OLED_ShowNum(1,1,x1,1);
+		OLED_ShowNum(2,1,x2,1);
+		OLED_ShowNum(3,1,x3,1);
 		OLED_ShowNum(4,1,x4,1);
 	}
 }
