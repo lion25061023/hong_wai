@@ -10,6 +10,12 @@
 
 void sensor_Init(void);
 void sensor_trace(void);
-
+void zhi_xing(void);
+void xiao_zuo(void);
+void xiao_you(void);
+void da_you(void);
+void da_zuo(void);
+void stop(void);
+void tui(void);
 #endif
 

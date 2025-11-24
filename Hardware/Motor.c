@@ -25,7 +25,7 @@ void Motor_Init(void)
 	PWM_Init();
 }
 
-void Motor_SetPWM_zuo_hou(float PWM)
+void Motor_SetPWM_you_hou(float PWM)
 {
 	if (PWM >= 0)
 	{
@@ -41,7 +41,7 @@ void Motor_SetPWM_zuo_hou(float PWM)
 	}
 }
 
-void Motor_SetPWM_you_hou(float PWM)
+void Motor_SetPWM_zuo_hou(float PWM)
 {
 	if (PWM >= 0)
 	{

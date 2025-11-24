@@ -670,6 +670,16 @@
               <FileType>5</FileType>
               <FilePath>.\System\Tim.h</FilePath>
             </File>
+            <File>
+              <FileName>meun.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\System\meun.c</FilePath>
+            </File>
+            <File>
+              <FileName>menu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\System\menu.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -719,6 +729,16 @@
               <FileName>sensor.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\hardware\sensor.h</FilePath>
+            </File>
+            <File>
+              <FileName>Key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Hardware\Key.c</FilePath>
+            </File>
+            <File>
+              <FileName>Key.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Hardware\Key.h</FilePath>
             </File>
           </Files>
         </Group>
