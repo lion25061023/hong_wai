@@ -25,11 +25,11 @@ void sensor_Init(void)
 
 void zhi_xing(void)
 {
-	Motor_SetPWM_zuo_qian(60);
-	Motor_SetPWM_zuo_hou(60);
-	Motor_SetPWM_you_qian(60);
-	Motor_SetPWM_you_hou(60);
-	OLED_ShowString(4,1,"zhi_xing");
+	Motor_SetPWM_zuo_qian(90);
+	Motor_SetPWM_zuo_hou(90);
+	Motor_SetPWM_you_qian(90);
+	Motor_SetPWM_you_hou(90);
+	OLED_ShowString(2,1,"zhi_xing");
 }
 
 void xiao_zuo(void)
@@ -38,7 +38,7 @@ void xiao_zuo(void)
 	Motor_SetPWM_zuo_hou(20);
 	Motor_SetPWM_you_qian(60);
 	Motor_SetPWM_you_hou(60);
-	OLED_ShowString(4,1,"xiao_zuo");
+	OLED_ShowString(2,1,"xiao_zuo");
 }
 
 void xiao_you(void)
@@ -47,7 +47,7 @@ void xiao_you(void)
 	Motor_SetPWM_zuo_hou(60);
 	Motor_SetPWM_you_qian(20);
 	Motor_SetPWM_you_hou(20);
-	OLED_ShowString(4,1,"xiao_you");
+	OLED_ShowString(2,1,"xiao_you");
 	
 }
 
@@ -56,18 +56,18 @@ void da_you(void)
 {
 	Motor_SetPWM_zuo_qian(100);
 	Motor_SetPWM_zuo_hou(100);
-	Motor_SetPWM_you_qian(-30);
-	Motor_SetPWM_you_hou(-30);
-	OLED_ShowString(4,1,"da_you");
+	Motor_SetPWM_you_qian(-50);
+	Motor_SetPWM_you_hou(-50);
+	OLED_ShowString(2,1,"da_you");
 }
 
 void da_zuo(void)
 {
-	Motor_SetPWM_zuo_qian(-30);
-	Motor_SetPWM_zuo_hou(-30);
+	Motor_SetPWM_zuo_qian(-50);
+	Motor_SetPWM_zuo_hou(-50);
 	Motor_SetPWM_you_qian(100);
 	Motor_SetPWM_you_hou(100);
-	OLED_ShowString(4,1,"da_zuo");
+	OLED_ShowString(2,1,"da_zuo");
 }
 
 void stop(void)
@@ -76,7 +76,7 @@ void stop(void)
 	Motor_SetPWM_zuo_hou(0);
 	Motor_SetPWM_you_qian(0);
 	Motor_SetPWM_you_hou(0);
-	OLED_ShowString(4,1,"stop");
+	OLED_ShowString(2,1,"stop");
 	
 }
 
@@ -86,7 +86,7 @@ void tui(void)
 	Motor_SetPWM_zuo_hou(30);
 	Motor_SetPWM_you_qian(30);
 	Motor_SetPWM_you_hou(30);
-	OLED_ShowString(4,1,"tui");
+	OLED_ShowString(2,1,"tui");
 }
 
 //白的是0，黑的是1
@@ -128,12 +128,12 @@ void sensor_trace(void)
 	
 	else if(l1==black &&l2==white && r2==white && r1==white)
 	{
-		xiao_zuo();
+		da_zuo();
 	}
 	
 	else if(l1==white &&l2==white && r2==white && r1==black)
 	{
-		xiao_you();
+		da_you();
 	}
 	
 }

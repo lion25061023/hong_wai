@@ -731,14 +731,14 @@
               <FilePath>.\hardware\sensor.h</FilePath>
             </File>
             <File>
-              <FileName>Key.c</FileName>
+              <FileName>key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Hardware\Key.c</FilePath>
+              <FilePath>.\hardware\key.c</FilePath>
             </File>
             <File>
-              <FileName>Key.h</FileName>
+              <FileName>key.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Hardware\Key.h</FilePath>
+              <FilePath>.\hardware\key.h</FilePath>
             </File>
           </Files>
         </Group>
