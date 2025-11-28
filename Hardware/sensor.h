@@ -5,6 +5,8 @@
 #define r2 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_10)
 #define l1 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_9)
 #define l2 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8)
+#define zuo GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_5)
+#define you GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_10)
 
 
 

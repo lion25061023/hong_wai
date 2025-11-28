@@ -4,15 +4,17 @@
 #define r2 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_10)
 #define l1 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_9)
 #define l2 GPIO_ReadInputDataBit(GPIOA, GPIO_Pin_8)
+#define zuo GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_5)
+#define you GPIO_ReadInputDataBit(GPIOB, GPIO_Pin_10)
 #define black 1
 #define white 0
 #include "OLED.h"
 
-uint16_t zhi_speed=90;
+uint16_t zhi_speed=60;
 uint16_t da_zhu=80;
 uint16_t da_cong=80;
 uint16_t xiao_zhu=60;
-uint16_t xiao_cong=20;
+uint16_t xiao_cong=50;
 void sensor_Init(void)
 {
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
@@ -22,6 +24,14 @@ void sensor_Init(void)
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_8| GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11 ;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+	
+	GPIO_InitTypeDef GPIO_InitStructure1;
+	GPIO_InitStructure1.GPIO_Mode = GPIO_Mode_IPU;
+	GPIO_InitStructure1.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_10 ;
+	GPIO_InitStructure1.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_Init(GPIOB, &GPIO_InitStructure1);
 	
 	
 
@@ -40,8 +50,8 @@ void zhi_xing(void)
 
 void xiao_zuo(void)
 {
-	Motor_SetPWM_zuo_qian(xiao_cong);
-	Motor_SetPWM_zuo_hou(xiao_cong);
+	Motor_SetPWM_zuo_qian(-xiao_cong);
+	Motor_SetPWM_zuo_hou(-xiao_cong);
 	Motor_SetPWM_you_qian(xiao_zhu);
 	Motor_SetPWM_you_hou(xiao_zhu);
 	//OLED_ShowString(2,1,"xiao_zuo");
@@ -51,8 +61,8 @@ void xiao_you(void)
 {
 	Motor_SetPWM_zuo_qian(xiao_zhu);
 	Motor_SetPWM_zuo_hou(xiao_zhu);
-	Motor_SetPWM_you_qian(xiao_cong);
-	Motor_SetPWM_you_hou(xiao_cong);
+	Motor_SetPWM_you_qian(-xiao_cong);
+	Motor_SetPWM_you_hou(-xiao_cong);
 	//OLED_ShowString(2,1,"xiao_you");
 	
 }
@@ -95,7 +105,7 @@ void tui(void)
 	//OLED_ShowString(2,1,"tui");
 }
 
-//°×µÄÊÇ0£¬ºÚµÄÊÇ1
+//ï¿½×µï¿½ï¿½ï¿½0ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½1
 void sensor_trace(void)
 {
 	OLED_ShowString(4,1,"               ");
@@ -112,16 +122,24 @@ void sensor_trace(void)
 	{
 		xiao_you();
 	}
-	else if(l1==black &&l2==black && r2==white && r1==white)
+	else if(l1==black &&l2==black && r2==black && r1==white)
 	{
 		da_zuo();
 	}
 	
+	else if(l1==white &&l2==black && r2==black && r1==black)
+	{
+		da_you();
+	}
+
+	else if(l1==white &&l2==black && r2==white && r1==white)
+	{
+		da_zuo();
+	}
 	else if(l1==white &&l2==white && r2==black && r1==black)
 	{
 		da_you();
 	}
-	
 	else if(l1==white &&l2==white && r2==white && r1==white)
 	{
 		tui();
