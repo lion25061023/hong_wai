@@ -22,7 +22,7 @@ float Ki = 0.0;
 float Kd = 8.0;
 
 //电机速度参数（初始值）
-int baseSpeed = 70;  
+int baseSpeed = 65;  
 
 //pid变量
 int error = 0;          // 当前偏差
@@ -99,7 +99,7 @@ void quan(void)
 			lost_count++;
 			
 			//短暂丢线，沿上次方向修正 （时间需要调）
-			if (lost_count <= 5)
+			if (lost_count <= 3)
 			{
 				error = last_error;  
 			}
