@@ -15,11 +15,10 @@ uint16_t start_flag=1;
 
 
 //µ÷²ÎÊý
-extern uint16_t zhi_speed;
-extern uint16_t da_zhu;
-extern uint16_t da_cong;
-extern uint16_t xiao_zhu;
-extern uint16_t xiao_cong;
+extern int error;
+extern int last_error;
+extern int baseSpeed;
+
 
 int main(void)
 {
@@ -43,6 +42,9 @@ int main(void)
 		OLED_ShowNum(4,7,l2,1);
 		OLED_ShowNum(4,9,l1,1);
 		OLED_ShowNum(4,11,zuo,1);
+		OLED_ShowSignedNum(1,1,error,3);
+		OLED_ShowSignedNum(1,5,last_error,3);
+		OLED_ShowSignedNum(2,1,baseSpeed,3);
 		keynum= Key_GetNum();
 		
 		

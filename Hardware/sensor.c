@@ -22,7 +22,7 @@ float Ki = 0.0;
 float Kd = 8.0;
 
 //电机速度参数（初始值）
-int baseSpeed = 50;  
+int baseSpeed = 70;  
 
 //pid变量
 int error = 0;          // 当前偏差
