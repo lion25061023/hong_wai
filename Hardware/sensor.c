@@ -19,10 +19,10 @@ int16_t weight[6] = { -7, -4, -1, 1, 4, 7 };
 //pid参数
 float Kp = 15.0;
 float Ki = 0.0;
-float Kd = 8.0;
+float Kd = 5.0;
 
 //电机速度参数（初始值）
-int baseSpeed = 65;  
+int baseSpeed = 60;  
 
 //pid变量
 int error = 0;          // 当前偏差
@@ -99,7 +99,7 @@ void quan(void)
 			lost_count++;
 			
 			//短暂丢线，沿上次方向修正 （时间需要调）
-			if (lost_count <= 3)
+			if (lost_count <= 5)
 			{
 				error = last_error;  
 			}

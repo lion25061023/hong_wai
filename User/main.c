@@ -18,6 +18,7 @@ uint16_t start_flag=1;
 extern int error;
 extern int last_error;
 extern int baseSpeed;
+extern int lost_count;
 
 
 int main(void)
@@ -42,9 +43,14 @@ int main(void)
 		OLED_ShowNum(4,7,l2,1);
 		OLED_ShowNum(4,9,l1,1);
 		OLED_ShowNum(4,11,zuo,1);
-		OLED_ShowSignedNum(1,1,error,3);
-		OLED_ShowSignedNum(1,5,last_error,3);
-		OLED_ShowSignedNum(2,1,baseSpeed,3);
+		OLED_ShowString(1,1,"e:");
+		OLED_ShowString(1,7,"le:");
+		OLED_ShowSignedNum(1,3,error,3);
+		OLED_ShowSignedNum(1,10,last_error,3);
+		OLED_ShowString(2,1,"speed:");
+		OLED_ShowSignedNum(2,7,baseSpeed,3);
+		OLED_ShowString(3,1,"lc:");
+		OLED_ShowSignedNum(3,4,lost_count,3);
 		keynum= Key_GetNum();
 		
 		
@@ -53,6 +59,14 @@ int main(void)
 		{
 			OLED_Clear();
 			start_flag=!start_flag;
+		}
+		else if (keynum==2) // up键加速
+		{
+			baseSpeed+=5;
+		}
+		else if (keynum==3) // down键减速
+		{
+			baseSpeed-=5;
 		}	
 																                        
 		//控制发车  循迹
